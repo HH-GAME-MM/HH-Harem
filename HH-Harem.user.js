@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.3
+// @version      0.4
 // @description  Compress the filter and open the upgrade page for girls in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/harem.html
@@ -64,7 +64,7 @@
     formControlsLast.innerHTML = '';
     formControlsLast.setAttribute('style', 'height:50px');
 
-    //temporary disabled
+    //temporarily deactivated until i have some time for it
     document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="event"]').parentNode.parentNode.setAttribute('style', 'display:none');
     document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="world"]').parentNode.parentNode.setAttribute('style', 'display:none');
 })();
