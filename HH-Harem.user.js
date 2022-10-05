@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.2
+// @version      0.3
 // @description  Compress the filter and open the upgrade page for girls in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/harem.html
@@ -51,13 +51,20 @@
     //filter layout modifications
     let formControls = document.querySelectorAll('#filtering_girls div.form-wrapper div.form-control');
     let formControlsLast = formControls[formControls.length-1];
-    let formControlEvent = document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="event"]').parentNode.parentNode;
-    formControlEvent.innerHTML = '';
-    formControlEvent.appendChild(formControlsLast.querySelector('div'));
-    formControlEvent.setAttribute('style', 'width:100%;margin-top:5px');
-    let formControlWorld = document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="world"]').parentNode.parentNode;
-    formControlWorld.innerHTML = '';
-    formControlWorld.appendChild(formControlsLast.querySelector('div'));
+    let formControlsPN = formControlsLast.parentNode;
+    let formControlShards = document.createElement('div');
+    formControlShards.setAttribute('class', 'form-control');
+    formControlShards.appendChild(formControlsLast.querySelector('div'));
+    formControlShards.setAttribute('style', 'width:100%;margin-top:5px');
+    formControlsPN.insertBefore(formControlShards, formControlsLast);
+    let formControlCarac = document.createElement('div');
+    formControlCarac.setAttribute('class', 'form-control');
+    formControlCarac.appendChild(formControlsLast.querySelector('div'));
+    formControlsPN.insertBefore(formControlCarac, formControlShards);
     formControlsLast.innerHTML = '';
     formControlsLast.setAttribute('style', 'height:50px');
+
+    //temporary disabled
+    document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="event"]').parentNode.parentNode.setAttribute('style', 'display:none');
+    document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="world"]').parentNode.parentNode.setAttribute('style', 'display:none');
 })();
