@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.4
+// @version      0.5
 // @description  Compress the filter and open the upgrade page for girls in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/harem.html
 // @match        https://*.hentaiheroes.com/harem/*
 // @match        https://nutaku.haremheroes.com/harem.html
 // @match        https://nutaku.haremheroes.com/harem/*
+// @match        https://*.comixharem.com/harem.html
+// @match        https://*.comixharem.com/harem/*
 // @run-at       document-end
 // @namespace    https://github.com/HH-GAME-MM/HH-Harem
 // @updateURL    https://github.com/HH-GAME-MM/HH-Harem/raw/main/HH-Harem.user.js
