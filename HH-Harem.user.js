@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.6
+// @version      0.7
 // @description  Compress the filter and open the upgrade page for girls in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/harem.html
@@ -70,9 +70,21 @@
     document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="event"]').parentNode.parentNode.setAttribute('style', 'display:none');
     document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="world"]').parentNode.parentNode.setAttribute('style', 'display:none');
 
-    //open the filter
-    document.getElementById('filtering_girls').setAttribute('class', 'original_position');
-    document.getElementById('harem_left').setAttribute('class', 'original_position');
-    document.getElementById('harem_right').setAttribute('class', 'original_position');
-    document.querySelector('#filter_girls span').setAttribute('class', 'search_close_icn');
+    //filter status
+    let filterStatus = localStorage.getItem('HHHarem_FilterStatus');
+    if(filterStatus == null) filterStatus = 'Closed';
+    let formControlFilterStatus = document.createElement('div');
+    formControlFilterStatus.setAttribute('class', 'form-control');
+    formControlFilterStatus.setAttribute('style', 'width:100%;height:50px');
+    formControlFilterStatus.innerHTML = '<div class="select-group"><label class="head-group" for="lists-select">Filter Status</label><select icon="down-arrow" onchange="localStorage.setItem(\'HHHarem_FilterStatus\', this.value)"><option value="Open"' + (filterStatus == 'Open' ? ' selected="selected"' : '') + '>Open by default</option><option value="Closed"' + (filterStatus == 'Closed' ? ' selected="selected"' : '') + '>Closed by default</option></select></div>';
+    formControlsPN.insertBefore(formControlFilterStatus, formControlsLast);
+
+    //open the filter if necessary
+    if(filterStatus == 'Open')
+    {
+        document.getElementById('filtering_girls').setAttribute('class', 'original_position');
+        document.getElementById('harem_left').setAttribute('class', 'original_position');
+        document.getElementById('harem_right').setAttribute('class', 'original_position');
+        document.querySelector('#filter_girls span').setAttribute('class', 'search_close_icn');
+    }
 })();
