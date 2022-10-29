@@ -1,7 +1,7 @@
 # HH-Harem
 Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 
-# Requirements
+## Requirements
 Hentai Heroes++ BDSM version 1.27.0 or higher since v0.8 (2022-10-29)
 
 ## Windows / Mac OS - Installation instructions:
