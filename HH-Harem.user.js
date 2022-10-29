@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.7
-// @description  Compress the filter and open the upgrade page for girls in a new tab by double-clicking
+// @version      0.8
+// @description  Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/harem.html
 // @match        https://*.hentaiheroes.com/harem/*
@@ -36,48 +36,17 @@
     //filter css
     let css = document.createElement('style');
     document.head.appendChild(css);
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.reset-filters-container {width:100%;}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.reset-filters-container button {padding:2px 20px}');
-    css.sheet.insertRule('#reset-filters {width:100%;}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper {display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control {width:48%;display:flex;margin-bottom:2px;}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control div.select-group {width:100%}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control[style="margin-bottom: -11px;"] {width:100%;margin-top:5px;}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control[style="margin-bottom: -11px;"] label {display:none}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control button {height:32px !important}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control div.selectric, #filtering_girls div.form-wrapper div.form-control input, #filtering_girls div.form-wrapper div.form-control select {height:32px !important}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control div.selectric span.label {margin-top:-3px;}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control div.shards {margin-top:-7px;}');
-    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control button.carac-state {margin-top:11px;}');
-
-    //filter layout modifications
-    let formControls = document.querySelectorAll('#filtering_girls div.form-wrapper div.form-control');
-    let formControlsLast = formControls[formControls.length-1];
-    let formControlsPN = formControlsLast.parentNode;
-    let formControlShards = document.createElement('div');
-    formControlShards.setAttribute('class', 'form-control');
-    formControlShards.appendChild(formControlsLast.querySelector('div'));
-    formControlShards.setAttribute('style', 'width:100%;margin-top:5px');
-    formControlsPN.insertBefore(formControlShards, formControlsLast);
-    let formControlCarac = document.createElement('div');
-    formControlCarac.setAttribute('class', 'form-control');
-    formControlCarac.appendChild(formControlsLast.querySelector('div'));
-    formControlsPN.insertBefore(formControlCarac, formControlShards);
-    formControlsLast.innerHTML = '';
-    formControlsLast.setAttribute('style', 'height:50px');
-
-    //temporarily deactivated until i have some time for it
-    document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="event"]').parentNode.parentNode.setAttribute('style', 'display:none');
-    document.querySelector('#filtering_girls div.form-wrapper div.form-control select[name="world"]').parentNode.parentNode.setAttribute('style', 'display:none');
+    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control div.checkbox-group button.check-btn {height:34px}');
+    css.sheet.insertRule('#filtering_girls div.form-wrapper div.form-control div.checkbox-group button.check-btn.shards-state div {margin-top:-6px}');
 
     //filter status
     let filterStatus = localStorage.getItem('HHHarem_FilterStatus');
     if(filterStatus == null) filterStatus = 'Closed';
     let formControlFilterStatus = document.createElement('div');
-    formControlFilterStatus.setAttribute('class', 'form-control');
-    formControlFilterStatus.setAttribute('style', 'width:100%;height:50px');
+    formControlFilterStatus.setAttribute('class', 'form-control double-wide');
+    formControlFilterStatus.setAttribute('style', 'width:100%;height:50px;margin-top:-17px');
     formControlFilterStatus.innerHTML = '<div class="select-group"><label class="head-group" for="lists-select">Filter Status</label><select icon="down-arrow" onchange="localStorage.setItem(\'HHHarem_FilterStatus\', this.value)"><option value="Open"' + (filterStatus == 'Open' ? ' selected="selected"' : '') + '>Open by default</option><option value="Closed"' + (filterStatus == 'Closed' ? ' selected="selected"' : '') + '>Closed by default</option></select></div>';
-    formControlsPN.insertBefore(formControlFilterStatus, formControlsLast);
+    document.querySelector('#filtering_girls div.form-wrapper').appendChild(formControlFilterStatus);
 
     //open the filter if necessary
     if(filterStatus == 'Open')
