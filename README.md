@@ -19,3 +19,5 @@ Hentai Heroes++ BDSM version 1.27.0 or higher since v0.8 (2022-10-29)
 ![hh-harem-screenshot](https://user-images.githubusercontent.com/107755486/194135343-9767ef83-adb5-4c42-af46-096e78ab15ae.png)
 
 ![OpenByDefault](https://user-images.githubusercontent.com/107755486/194447710-ab623ab3-3313-431e-82c5-c67de2698f9f.png)
+
+Note: The screenshots are outdated but similar
