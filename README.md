@@ -1,5 +1,8 @@
 # HH-Harem
-Compress the filter and open the upgrade page for girls in a new tab by double-clicking. There is a setting to open the filter by default.
+Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
+
+# Requirements
+Hentai Heroes++ BDSM version 1.27.0 or higher since v0.8 (2022-10-29)
 
 ## Windows / Mac OS - Installation instructions:
 1) Install TamperMonkey browser extension (or your userscript extension of choice e.g. Greasemonkey)
