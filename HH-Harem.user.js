@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.8
+// @version      0.9
 // @description  Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/harem.html
@@ -9,6 +9,8 @@
 // @match        https://nutaku.haremheroes.com/harem/*
 // @match        https://*.comixharem.com/harem.html
 // @match        https://*.comixharem.com/harem/*
+// @match        https://*.pornstarharem.com/harem.html
+// @match        https://*.pornstarharem.com/harem/*
 // @run-at       document-end
 // @namespace    https://github.com/HH-GAME-MM/HH-Harem
 // @updateURL    https://github.com/HH-GAME-MM/HH-Harem/raw/main/HH-Harem.user.js
