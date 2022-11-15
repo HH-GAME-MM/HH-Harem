@@ -2,7 +2,8 @@
 Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 
 ## Requirements
-Hentai Heroes++ BDSM version 1.27.0 or higher since v0.8 (2022-10-29)
+- Hentai Heroes++ BDSM version 1.27.0 or higher since v0.8 (2022-10-29)
+- Alternatively, you can use the older standalone version v0.7 and disable the automatic updates. v0.7 can be found here: https://github.com/HH-GAME-MM/HH-Harem/raw/84b207a6c942aa2b2969369a520262ba9a029e4d/HH-Harem.user.js
 
 ## Windows / Mac OS - Installation instructions:
 1) Install TamperMonkey browser extension (or your userscript extension of choice e.g. Greasemonkey)
