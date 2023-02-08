@@ -1,4 +1,4 @@
-# HH-Harem
+# HH Harem
 Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 
 Supported games: HH.com, Nutaku, CxH, PsH
