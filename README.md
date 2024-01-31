@@ -1,7 +1,7 @@
 # HH Harem
 Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 
-Supported games: HH.com, Nutaku, CxH, PsH
+Supported games: HH.com, Nutaku, CxH, PsH, GH, GPSH, TPSH, hornyheroes.com
 
 ## Requirements
 - Hentai Heroes++ BDSM version 1.27.0 or higher since v0.8 (2022-10-29)
@@ -23,8 +23,8 @@ Supported games: HH.com, Nutaku, CxH, PsH
 5. Refresh the main page or log in to the game again for the script to take effect
 
 ## Screenshots:
-![hh-harem-screenshot](https://user-images.githubusercontent.com/107755486/194135343-9767ef83-adb5-4c42-af46-096e78ab15ae.png)
+![OpenByDefault](https://github.com/HH-GAME-MM/HH-Harem/assets/107755486/233f04db-7e8c-49da-b39d-270a77765716)
 
-![OpenByDefault](https://user-images.githubusercontent.com/107755486/194447710-ab623ab3-3313-431e-82c5-c67de2698f9f.png)
+![hh_harem](https://github.com/HH-GAME-MM/HH-Harem/assets/107755486/f96defcb-6369-4715-adfa-75284a8534d4)
 
 Note: The screenshots are outdated but similar
