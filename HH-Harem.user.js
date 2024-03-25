@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.12
+// @version      0.13
 // @description  Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/harem.html
@@ -32,9 +32,18 @@
 
     console.log('HH Harem Script v' + GM_info.script.version);
 
-    setTimeout(() => {
+    setTimeout(run, 1);
+    function run(tries = 0)
+    {
         //double click a girl to open girl upgrade page in a new tab
         let girls_list = document.querySelector('#harem_left div.girls_list');
+        if(!girls_list)
+        {
+            if(tries < 50) {
+                setTimeout(run, 100, tries + 1);
+            }
+            return;
+        }
         girls_list.addEventListener('dblclick', (e) => {
             let target = e.target;
             if(target != girls_list)
@@ -68,5 +77,5 @@
             document.getElementById('harem_right').setAttribute('class', 'original_position');
             document.querySelector('#filter_girls span').setAttribute('class', 'search_close_icn');
         }
-    }, 1);
+    }
 })();
