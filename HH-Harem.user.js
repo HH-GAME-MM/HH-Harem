@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.13
+// @version      0.14
 // @description  Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/harem.html
@@ -59,6 +59,7 @@
         css.sheet.insertRule('#filtering_girls .form-wrapper .form-control .checkbox-group .check-btn.shards-state div {margin-top:-2px !important}');
         css.sheet.insertRule('#filtering_girls .form-wrapper .form-control .checkbox-group .check-btn.shards-state, #filtering_girls .form-wrapper .form-control .checkbox-group .check-btn.carac-state {height:1.7rem !important;}');
         css.sheet.insertRule('#filtering_girls .form-wrapper .checkbox-group:nth-of-type(2) {margin-bottom:0px !important}');
+        css.sheet.insertRule('#filtering_girls .form-wrapper .form-control.filter-by-checkbox {margin-top:5px !important}');
 
         //filter status
         let filterStatus = localStorage.getItem('HHHarem_FilterStatus');
