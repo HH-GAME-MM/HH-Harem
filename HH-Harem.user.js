@@ -1,24 +1,24 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.14
+// @version      0.15
 // @description  Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 // @author       -MM-
-// @match        https://*.hentaiheroes.com/harem.html
-// @match        https://*.hentaiheroes.com/harem/*
-// @match        https://nutaku.haremheroes.com/harem.html
-// @match        https://nutaku.haremheroes.com/harem/*
-// @match        https://*.comixharem.com/harem.html
-// @match        https://*.comixharem.com/harem/*
-// @match        https://*.pornstarharem.com/harem.html
-// @match        https://*.pornstarharem.com/harem/*
-// @match        https://*.gayharem.com/harem.html
-// @match        https://*.gayharem.com/harem/*
-// @match        https://*.gaypornstarharem.com/harem.html
-// @match        https://*.gaypornstarharem.com/harem/*
-// @match        https://*.transpornstarharem.com/harem.html
-// @match        https://*.transpornstarharem.com/harem/*
-// @match        https://*.hornyheroes.com/harem.html
-// @match        https://*.hornyheroes.com/harem/*
+// @match        https://*.hentaiheroes.com/characters.html
+// @match        https://*.hentaiheroes.com/characters/*
+// @match        https://nutaku.haremheroes.com/characters.html
+// @match        https://nutaku.haremheroes.com/characters/*
+// @match        https://*.comixharem.com/characters.html
+// @match        https://*.comixharem.com/characters/*
+// @match        https://*.pornstarharem.com/characters.html
+// @match        https://*.pornstarharem.com/characters/*
+// @match        https://*.gayharem.com/characters.html
+// @match        https://*.gayharem.com/characters/*
+// @match        https://*.gaypornstarharem.com/characters.html
+// @match        https://*.gaypornstarharem.com/characters/*
+// @match        https://*.transpornstarharem.com/characters.html
+// @match        https://*.transpornstarharem.com/characters/*
+// @match        https://*.hornyheroes.com/characters.html
+// @match        https://*.hornyheroes.com/characters/*
 // @run-at       document-end
 // @namespace    https://github.com/HH-GAME-MM/HH-Harem
 // @updateURL    https://github.com/HH-GAME-MM/HH-Harem/raw/main/HH-Harem.user.js
