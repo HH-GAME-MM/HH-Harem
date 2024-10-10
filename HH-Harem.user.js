@@ -49,7 +49,9 @@
             if(target != girls_list)
             {
                 while(target.getAttribute('id_girl') == null) target = target.parentNode;
-                window.open('https://'+window.location.hostname+'/girl/'+target.getAttribute('id_girl')+'?resource=experience', '_blank');
+                // on nutaku the session id is required
+                const sess = window.location.hostname.includes('nutaku') ? '&sess=' + new URLSearchParams(window.location.search).get("sess") : '';
+                window.open('https://'+window.location.hostname+'/girl/'+target.getAttribute('id_girl')+'?resource=experience' + sess, '_blank');
             }
         });
 
