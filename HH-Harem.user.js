@@ -1,36 +1,56 @@
 // ==UserScript==
 // @name         HH Harem
-// @version      0.16
+// @version      0.17
 // @description  Compact Harem filter, "open by default" setting, open the girl upgrade page in a new tab by double-clicking
 // @author       -MM-
 // @match        https://*.hentaiheroes.com/characters.html*
 // @match        https://*.hentaiheroes.com/characters/*
+// @match        https://*.hentaiheroes.com/girl/*?resource=experience*
 // @match        https://nutaku.haremheroes.com/characters.html*
 // @match        https://nutaku.haremheroes.com/characters/*
+// @match        https://nutaku.haremheroes.com/girl/*?resource=experience*
 // @match        https://*.comixharem.com/characters.html
 // @match        https://*.comixharem.com/characters/*
+// @match        https://*.comixharem.com/girl/*?resource=experience*
 // @match        https://*.pornstarharem.com/characters.html*
 // @match        https://*.pornstarharem.com/characters/*
+// @match        https://*.pornstarharem.com/girl/*?resource=experience*
 // @match        https://*.gayharem.com/characters.html*
 // @match        https://*.gayharem.com/characters/*
+// @match        https://*.gayharem.com/girl/*?resource=experience*
 // @match        https://*.gaypornstarharem.com/characters.html*
 // @match        https://*.gaypornstarharem.com/characters/*
+// @match        https://*.gaypornstarharem.com/girl/*?resource=experience*
 // @match        https://*.transpornstarharem.com/characters.html*
 // @match        https://*.transpornstarharem.com/characters/*
+// @match        https://*.transpornstarharem.com/girl/*?resource=experience*
 // @match        https://*.hornyheroes.com/characters.html*
 // @match        https://*.hornyheroes.com/characters/*
+// @match        https://*.hornyheroes.com/girl/*?resource=experience*
 // @run-at       document-end
 // @namespace    https://github.com/HH-GAME-MM/HH-Harem
 // @updateURL    https://github.com/HH-GAME-MM/HH-Harem/raw/main/HH-Harem.user.js
 // @downloadURL  https://github.com/HH-GAME-MM/HH-Harem/raw/main/HH-Harem.user.js
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=hentaiheroes.com
 // @grant        GM_info
+// @grant        unsafeWindow
 // ==/UserScript==
 
-(function() {
+(function(window) {
     'use strict';
 
     console.log('HH Harem Script v' + GM_info.script.version);
+
+    //shared game functions and objects
+    const getSessionId = (window.getSessionId ? window.getSessionId : () => { return new URLSearchParams(window.location.search).get("sess"); }); //Nutaku only
+
+    //remove nutaku's message
+    const alert = window.alert;
+    function noIDont(message) {
+        if (message == "You need to be inside Nutaku's frame for this to work.") { return; }
+        alert(message);
+    }
+    window.alert = noIDont;
 
     setTimeout(run, 1);
     function run(tries = 0)
@@ -49,9 +69,8 @@
             if(target != girls_list)
             {
                 while(target.getAttribute('id_girl') == null) target = target.parentNode;
-                // on nutaku the session id is required
-                const sess = window.location.hostname.includes('nutaku') ? '&sess=' + new URLSearchParams(window.location.search).get("sess") : '';
-                window.open('https://'+window.location.hostname+'/girl/'+target.getAttribute('id_girl')+'?resource=experience' + sess, '_blank');
+                const nutakuSessionId = getSessionId(); // on nutaku the session id is required
+                window.open('https://' + window.location.hostname + '/girl/' + target.getAttribute('id_girl') + '?resource=experience' + (nutakuSessionId !== null ? '&sess=' + nutakuSessionId : ''), '_blank');
             }
         });
 
@@ -81,4 +100,4 @@
             document.querySelector('#filter_girls span').setAttribute('class', 'search_close_icn');
         }
     }
-})();
+})(unsafeWindow);
